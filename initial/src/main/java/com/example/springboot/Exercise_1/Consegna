@@ -1,0 +1,21 @@
+Esercizio 1: Creare un GetMapping che restituisca una stringa  di base come risposta
+1 - Creare un nuovo endpoint "/hello" utilizzando l'annotazione @GetMapping.
+2 - Nel metodo, restituisci una semplice stringa come "Hello World!".
+
+
+Esercizio 2: Creare un GetMapping che restituisca un oggetto ResponseEntity come risposta
+1 - Creare un nuovo endpoint "/greeting" utilizzando l'annotazione @GetMapping.
+2 - Nel metodo, restituire un oggetto ResponseEntity con un messaggio stringa come "Buon pomeriggio!".
+3 - È inoltre possibile impostare il codice di stato HTTP in ResponseEntity, ad esempio "200 OK".
+
+
+Esercizio 3: Creare una nuova classe con un oggetto GetMapping che restituisce un oggetto ResponseEntity
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/info" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, restituire un ResponseEntity con 200 OK
+
+
+Esercizio 4: Creare un GetMapping che restituisce 400 - Richiesta non valida, o 200 - OK, in base a un valore booleano casuale
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/random" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, restituire un ResponseEntity con 200 OK o 400 Bad Request in base al risultato di new Random().nextBoolean()
