@@ -1,6 +1,8 @@
 package com.example.springboot.Exercise_2.controllers;
 
 import com.example.springboot.Exercise_2.entity.Meal;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,25 +29,25 @@ public class MealController {
     }
 
     @GetMapping("/meal/{name}")
-    public Optional<?> getOneMeal(@PathVariable String name){
+    public ResponseEntity<?> getOneMeal(@PathVariable String name){
         for(Meal meal: mealList){
             if (meal.getTipo().equalsIgnoreCase(name)){
-                return Optional.of(meal);
+                return new ResponseEntity<>(meal, HttpStatus.OK);
             }
         }
-        return Optional.of("Non esiste nessun piatto con quel nome");
+        return new ResponseEntity<>("Non esiste nessun piatto con quel nome", HttpStatus.BAD_REQUEST);
     }
 
 
 
-    @GetMapping("/meal/description-match/{phrase}")
-    public Optional<?> getMatchDescription(@PathVariable String description){
+    @GetMapping("/meal/description-match/{word}")
+    public ResponseEntity<?> getMatchDescription(@PathVariable String word){
         for (Meal meal: mealList){
-            if (meal.getPerlaDiSaggezza().contentEquals(description)){
-                return Optional.of(meal);
+            if (meal.getPerlaDiSaggezza().contains(word)){
+                return new ResponseEntity<>(meal, HttpStatus.OK);
             }
         }
-        return Optional.of("La ricerca non è andata a buon fine");
+        return new ResponseEntity<>("La ricerca non è andata a buon fine", HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/meal/price")
