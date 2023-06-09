@@ -1,0 +1,25 @@
+Esercizio 1: Creare un oggetto GetMapping che restituisca un elenco di pasti
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/meals" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, restituire un elenco di oggetti Pasto.
+
+
+Esercizio 2: Creare un oggetto GetMapping che restituisce un pasto in base al nome
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/meal/{name}" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, aggiungere un parametro di query "name" utilizzando l'annotazione @PathVariable.
+4 - Restituire un oggetto Meal con il nome corrispondente.
+
+
+Esercizio 3: Creare un oggetto GetMapping che restituisca un pasto con qualsiasi parola descrittiva
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/meal/description-match/{phrase}" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, aggiungere un parametro di query "description" utilizzando l'annotazione @PathVariable.
+4 - Restituire un oggetto Pasto con la descrizione corrispondente.
+
+
+Esercizio 4: Creare un oggetto GetMapping che restituisca un pasto in base alla fascia di prezzo
+1 - Annotare una nuova classe con l'annotazione @RestController.
+2 - Creare un nuovo endpoint "/meal/price" utilizzando l'annotazione @GetMapping.
+3 - Nel metodo, aggiungere due parametri di query "min" e "max" utilizzando l'annotazione @RequestParam.
+4 - Restituire un elenco di oggetti Meal con prezzi all'interno dell'intervallo specificato.
