@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class MealController {
@@ -45,7 +44,7 @@ public class MealController {
                 return new ResponseEntity<>(meal, HttpStatus.OK);
             }
         }
-        return new ResponseEntity<>("La ricerca non è andata a buon fine", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("La ricerca non è andata a buon fine...ritenta sarai più fortunato", HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/meal/price")
