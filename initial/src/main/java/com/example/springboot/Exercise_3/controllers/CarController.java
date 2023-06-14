@@ -19,40 +19,29 @@ public class CarController {
         return carRepository.saveAndFlush(car);
     }
 
-    @PutMapping("/car/{model}")
-    public ResponseEntity<?> update(@PathVariable("model") String model, @RequestParam int modelCar){
-        Car car;
-        if (carRepository.existsById(model)){
-            car = carRepository.getById(model);
-            car.setPrice(modelCar);
+    @PutMapping("/car/{id}")
+    public ResponseEntity<?> update(@PathVariable("id") Long id, @RequestBody Car newCar){
+        if (carRepository.existsById(id)){
+            Car car = carRepository.getById(id);
+            car.setModel(newCar.getModel());
             car = carRepository.saveAndFlush(car);
+            return new ResponseEntity<>(car, HttpStatus.OK);
         }else{
             return new ResponseEntity<>("Non è presente il modello di quest'auto", HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(carRepository, HttpStatus.OK);
     }
 
-    /*@PutMapping("/car/{model}")
-    public Car updateModel(@PathVariable String model, @RequestBody String modelCar){
-        Car car;
-        if (carRepository.existsById(model)){
-            car = carRepository.getById(model);
-            car.setModel(modelCar);
-            car = carRepository.saveAndFlush(car);
-        }
-        return car;
-    }
 
-     */
-
-    @DeleteMapping("/car/{model}")
-    public void deleteOneCar(@PathVariable String model, HttpServletResponse response){
-        if (carRepository.existsById(model)){
-            carRepository.deleteById(model);
+    @DeleteMapping("/car/{id}")
+    public void deleteOneCar(@PathVariable Long id, HttpServletResponse response){
+        if (carRepository.existsById(id)){
+            carRepository.deleteById(id);
         }else{
             response.setStatus(409);
         }
     }
+    
+
 /*
     @DeleteMapping("/car/price/{price}")
     public void deleteOverThatPrice(@PathVariable int price){
@@ -60,7 +49,7 @@ public class CarController {
     }
 
  */
-
+/*
     @PutMapping("/car/{model}/price")
     public Car updatePrice(@PathVariable String model, @RequestParam int price){
         Car car;
@@ -73,5 +62,7 @@ public class CarController {
         }
         return car;
     }
+
+ */
 
 }

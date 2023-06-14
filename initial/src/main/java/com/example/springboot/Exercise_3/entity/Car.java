@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 public class Car {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
     private String model;
     private int price;
 }

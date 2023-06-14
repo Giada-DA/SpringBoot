@@ -38,8 +38,6 @@ public class MealController {
         return new ResponseEntity<>("Non esiste nessun piatto con quel nome", HttpStatus.BAD_REQUEST);
     }
 
-
-
     @GetMapping("/meal/description-match/{word}")
     public ResponseEntity<?> getMatchDescription(@PathVariable String word){
         for (Meal meal: mealList){

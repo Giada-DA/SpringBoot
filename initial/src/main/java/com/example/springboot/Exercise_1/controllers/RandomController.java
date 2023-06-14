@@ -13,10 +13,10 @@ public class RandomController {
         boolean isSuccess = new java.util.Random().nextBoolean();
 
         if (isSuccess) {
-            String successMessage = "Richiesta eseguita con successo.";
+            String successMessage = "Richiesta eseguita con successo...birretta? :)";
             return ResponseEntity.status(HttpStatus.OK).body(successMessage);
         } else {
-            String errorMessage = "Richiesta fallita";
+            String errorMessage = "Richiesta fallita...very sad :(";
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMessage);
         }
     }

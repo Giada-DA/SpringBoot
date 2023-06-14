@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class InfoController {
     @GetMapping("/info")
     public ResponseEntity<String> getInfo() {
-        String message = "200 scimmie saltavano sul letto...o forse no";
+        String message = "99 scimmie saltavano sul letto...il resto è un contenuto per adulti";
         return ResponseEntity.status(HttpStatus.OK).body(message);
     }
 }
