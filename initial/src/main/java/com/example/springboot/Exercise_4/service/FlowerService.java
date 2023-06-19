@@ -2,10 +2,13 @@ package com.example.springboot.Exercise_4.service;
 
 import com.example.springboot.Exercise_4.entity.Flower;
 import com.example.springboot.Exercise_4.repository.FlowerRepository;
+import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 
 @Service
 public class FlowerService {
@@ -17,9 +20,11 @@ public class FlowerService {
         return flowerRepository.saveAndFlush(flower);
     }
 
-    public Flower getFlower(Long id){
-        return flowerRepository.getReferenceById(id);
+    public Optional<Flower> getFlower(Long id) throws ObjectNotFoundException{
+        return flowerRepository.findById(id);
     }
+
+
 
     public void updateFlower(Flower flower){
         flowerRepository.saveAndFlush(flower);

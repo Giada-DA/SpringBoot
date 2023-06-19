@@ -1,28 +1,28 @@
-Esercizio 1: Creare un oggetto PostMapping per aggiungere un nuovo pasto
-1 - Creare un nuovo endpoint "/car" utilizzando l'annotazione @PostMapping.
-2 - Nel metodo, aggiungere un RequestBody per il nuovo oggetto Car.
-3 - Aggiungi la nuova auto all'elenco delle auto.
+Esercizio 1: Creare un oggetto PostMapping per aggiungere un nuovo personaggio
+1 - Creare un nuovo endpoint "/add" utilizzando l'annotazione @PostMapping.
+2 - Nel metodo, aggiungere un RequestBody per il nuovo oggetto Personaggio.
+3 - Aggiungi il nuovo personaggio all'elenco dei personaggi.
 
 
-Esercizio 2: Creare un PutMapping per aggiornare un'auto in base al modello
-1 - Creare un nuovo endpoint "/car/{model}" utilizzando l'annotazione @PutMapping.
-2 - Nel metodo, aggiungere un PathVariable per il modello e un RequestBody per l'oggetto Car aggiornato.
-3 - Aggiornare l'auto con il modello corrispondente utilizzando le informazioni del RequestBody.
+Esercizio 2: Creare un PutMapping per aggiornare un personaggio in base all'id
+1 - Creare un nuovo endpoint "/personaggio/{id}" utilizzando l'annotazione @PutMapping.
+2 - Nel metodo, aggiungere un PathVariable per l'id e un RequestBody per l'oggetto Persoanaggio aggiornato.
+3 - Aggiornare il personaggio con il nome corrispondente utilizzando le informazioni del RequestBody.
 
 
-Esercizio 3: Creare un oggetto DeleteMapping per eliminare un'auto in base al modello
-1 - Creare un nuovo endpoint "/car/{model}" utilizzando l'annotazione @DeleteMapping.
-2 - Nel metodo, aggiungere un PathVariable per il modello.
-3 - Eliminare l'auto con il modello corrispondente.
+Esercizio 3: Creare un oggetto DeleteMapping per eliminare un personaggio in base all'id
+1 - Creare un nuovo endpoint "/personaggio/{id}" utilizzando l'annotazione @DeleteMapping.
+2 - Nel metodo, aggiungere un PathVariable per il nome.
+3 - Eliminare il personaggio con il nome corrispondente.
 
 
-Esercizio 4: Creare un oggetto DeleteMapping per eliminare tutte le auto al di sopra di un determinato prezzo
-1 - Creare un nuovo endpoint "/car/price/{price}" utilizzando l'annotazione @DeleteMapping.
-2 - Nel metodo, aggiungere un PathVariable per il prezzo.
-3 - Elimina tutte le auto con un prezzo superiore al prezzo dalla PathVariable.
+Esercizio 4: Creare un oggetto DeleteMapping per eliminare tutti i personaggi al di sopra di una determinata simpatia
+1 - Creare un nuovo endpoint "/personaggio/{simpatia}" utilizzando l'annotazione @DeleteMapping.
+2 - Nel metodo, aggiungere un PathVariable per la simpatia.
+3 - Elimina tutti i personaggi con una simpatia superiore al prezzo dalla PathVariable.
 
 
-Esercizio 5: Creare un oggetto PutMapping per aggiornare il prezzo di un'auto in base al modello
-1 - Creare un nuovo endpoint "/car/{model}/price" utilizzando l'annotazione @PutMapping.
-2 - Nel metodo, aggiungere un PathVariable per il modello e un RequestBody per il prezzo aggiornato.
-3 - Aggiorna il prezzo dell'auto con il modello corrispondente utilizzando le informazioni del RequestBody.
+Esercizio 5: Creare un oggetto PutMapping per aggiornare la simpatia di un personaggio in base all'id
+1 - Creare un nuovo endpoint "/personaggio/{nome}/simpatia" utilizzando l'annotazione @PutMapping.
+2 - Nel metodo, aggiungere un PathVariable per il nome e un RequestBody per la simpatia aggiornata.
+3 - Aggiorna la simpatia del personaggio con il nome corrispondente utilizzando le informazioni del RequestBody.

@@ -12,11 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-public class Car {
+public class Personaggio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
-    private String model;
-    private int price;
+    private String nome;
+    private int simpatia;
 }

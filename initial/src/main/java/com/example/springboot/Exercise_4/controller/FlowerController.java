@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class FlowerController {
@@ -20,8 +21,9 @@ public class FlowerController {
         return flowerService.createFlower(flower);
     }
 
+    //AHAHAH
     @GetMapping("/get/{id}")
-    public Flower getOneFlower(@PathVariable Long id) {
+    public Optional<Flower> getOneFlower(@PathVariable long id) {
         return flowerService.getFlower(id);
     }
 

@@ -1,0 +1,14 @@
+Esercizio 1
+1 - Creare un'entità denominata Animal
+2 - Creare un controller, un servizio, un repository
+3 - Impostare le operazioni CRUD per questa entità
+(4 - Inserisci la tua tabella degli ingredienti nel tuo db se esiste ancora per evitare problemi / confusione!)
+
+public class Animal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
+    private int leg;
+    private boolean isVegetarian;
+}
