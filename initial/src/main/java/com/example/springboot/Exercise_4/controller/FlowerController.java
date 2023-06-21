@@ -21,7 +21,6 @@ public class FlowerController {
         return flowerService.createFlower(flower);
     }
 
-    //AHAHAH
     @GetMapping("/get/{id}")
     public Optional<Flower> getOneFlower(@PathVariable long id) {
         return flowerService.getFlower(id);
@@ -32,7 +31,6 @@ public class FlowerController {
         flower.setId(id);
         flowerService.updateFlower(flower);
         return new ResponseEntity<>("I dati del fiore sono stati aggiornati", HttpStatus.OK);
-
     }
 
     @DeleteMapping("/delete/{id}")

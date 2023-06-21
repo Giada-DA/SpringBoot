@@ -24,8 +24,6 @@ public class FlowerService {
         return flowerRepository.findById(id);
     }
 
-
-
     public void updateFlower(Flower flower){
         flowerRepository.saveAndFlush(flower);
     }

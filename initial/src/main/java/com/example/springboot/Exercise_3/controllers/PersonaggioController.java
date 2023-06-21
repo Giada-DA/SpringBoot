@@ -41,14 +41,17 @@ public class PersonaggioController {
         }
     }
 
-    //AHAHAH
     @DeleteMapping("/personaggio/{simpatia}")
     public void deleteOverThatPrice(@PathVariable int simpatia){
+        personaggioRepository.deleteOverSimpatia(simpatia);
+
+        /*
         for (Personaggio pers : personaggioRepository.findAll()){
             if(pers.getSimpatia() > simpatia){
-
+                personaggioRepository.deleteById(pers.getId());
             }
-        }
+
+         */
     }
 
     @PutMapping("/personaggio/{id}/simpatia")
