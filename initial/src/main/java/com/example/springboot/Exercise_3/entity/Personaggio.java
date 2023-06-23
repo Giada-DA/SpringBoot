@@ -20,3 +20,10 @@ public class Personaggio {
     private String nome;
     private int simpatia;
 }
+/*
+@Id
+@SequenceGenerator(name = "pet_seq", sequenceName = "pet_sequence", initialValue = 1, allocationSize = 20)
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "pet_seq")
+@Column(name = "id", nullable = false)
+private Long id;
+ */

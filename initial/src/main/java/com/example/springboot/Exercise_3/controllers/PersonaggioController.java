@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class PersonaggioController {
 
+    public static int statusConflict = 409;
+
     @Autowired
     PersonaggioRepository personaggioRepository;
 
@@ -32,26 +34,20 @@ public class PersonaggioController {
     }
 
 
-    @DeleteMapping("/personaggio/{id}")
+    @DeleteMapping("/deleteOnePersonaggio/{id}")
     public void delete(@PathVariable Long id, HttpServletResponse response){
         if (personaggioRepository.existsById(id)){
             personaggioRepository.deleteById(id);
         }else{
-            response.setStatus(409);
+            response.setStatus(statusConflict);
         }
     }
 
     @DeleteMapping("/personaggio/{simpatia}")
-    public void deleteOverThatPrice(@PathVariable int simpatia){
-        personaggioRepository.deleteOverSimpatia(simpatia);
+    public ResponseEntity<String> deleteOverThatPrice(@PathVariable int simpatia){
+        int personaggiEliminati = personaggioRepository.deleteOverSimpatia(simpatia);
+        return new ResponseEntity<>("Sono state eliminati " + personaggiEliminati + " personaggi", HttpStatus.OK);
 
-        /*
-        for (Personaggio pers : personaggioRepository.findAll()){
-            if(pers.getSimpatia() > simpatia){
-                personaggioRepository.deleteById(pers.getId());
-            }
-
-         */
     }
 
     @PutMapping("/personaggio/{id}/simpatia")

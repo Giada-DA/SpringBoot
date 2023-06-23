@@ -2,17 +2,20 @@ package com.example.springboot.Exercise_3.repository;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
+import org.springframework.transaction.annotation.Transactional;
+
 
 public class PersonaggioRepositoryImpl implements PersonaggioRepositoryCustom{
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Transactional
     @Override
-    public void deleteOverSimpatia(int simpatia) {
-         entityManager.createQuery("DELETE FROM Personaggio p WHERE p.simpatia >: simpatia")
+    public int deleteOverSimpatia(int simpatia) {
+         return entityManager.createQuery("DELETE FROM Personaggio p WHERE p.simpatia > :simpatia")
         .setParameter("simpatia", simpatia)
-        .getSingleResult();
+        .executeUpdate();
     }
 }
 /*

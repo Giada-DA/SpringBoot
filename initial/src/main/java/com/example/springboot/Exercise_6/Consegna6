@@ -1,0 +1,6 @@
+Imita ciò che abbiamo appena creato, ma su un nuovo endpoint per /winter-meals
+
+Questo endpoint deve seguire la stessa logica dell'endpoint /summer-meals ma al contrario.
+
+Bonus:
+Prova a cambiare la tua posizione sull'API!
